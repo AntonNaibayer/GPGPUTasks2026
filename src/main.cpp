@@ -46,7 +46,7 @@ int main()
 	std::vector<cl_platform_id> platforms(platformsCount);
 	OCL_SAFE_CALL(clGetPlatformIDs(platformsCount, platforms.data(), nullptr));
 
-	for(int platformIndex = 0; platformIndex < platformsCount; ++platformIndex)
+	for(cl_uint platformIndex = 0; platformIndex < platformsCount; ++platformIndex)
 	{
 		std::cout << "Platform #" << (platformIndex + 1) << "/" << platformsCount << std::endl;
 		cl_platform_id platform = platforms[platformIndex];
@@ -80,7 +80,7 @@ int main()
 		// Запросите число доступных устройств данной платформы (аналогично тому, как это было сделано для запроса числа доступных платформ - см. секцию "OpenCL Runtime" -> "Query Devices")
 		cl_uint devicesCount = 0;
 
-		for(int deviceIndex = 0; deviceIndex < devicesCount; ++deviceIndex)
+		for(cl_uint deviceIndex = 0; deviceIndex < devicesCount; ++deviceIndex)
 		{
 			// TODO 2.2
 			// Запросите и напечатайте в консоль:
